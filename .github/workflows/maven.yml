@@ -27,7 +27,6 @@ jobs:
       run: mvn -B package --file pom.xml test
   
 
-    - name: Deploy with Maven
       
       
     - run: cd ~/actions-runner/deploy/shipperApi/shipperApi/ShipperAPI
