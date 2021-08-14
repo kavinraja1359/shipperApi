@@ -13,7 +13,7 @@ defaults:
     
 jobs:
    build:
-    runs-on: [ 'Linux', 'X64', 'main']
+    runs-on: [ 'Linux', 'X64', 'self-hosted']
 
     steps:
     - uses: actions/checkout@v2
