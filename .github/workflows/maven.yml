@@ -37,7 +37,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: testing
-      run: mvn install
+      run: mvn install --file pom.xml
   
    deploy:
     needs: [build,test]
