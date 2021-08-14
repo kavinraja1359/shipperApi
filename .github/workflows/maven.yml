@@ -34,5 +34,5 @@ jobs:
     - run: sudo docker container stop shippert2||true
     - run: sudo docker image rm ship||true
     - run: sudo docker build -t ship .
-    - run: sudo docker start postgres-container||sudo docker run --name postgres-container -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
+    - run: sudo docker start postgres-container||sudo docker run --name postgres-container -e POSTGRES_PASSWORD=postgres -d postgres
     - run: sudo docker run --name shippert2 -p 8080:8080 -link postgres-container:postgres ship |echo "success"
