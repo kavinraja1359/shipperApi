@@ -37,7 +37,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: testing
-      run: mvn packgage
+      run: mvn install
   
    deploy:
     needs: [build,test]
