@@ -12,6 +12,7 @@ defaults:
     working-directory: ./ShipperAPI
     
 jobs:
+  
   build:
     runs-on: ['self-hosted', 'Linux', 'X64', 'main']
 
