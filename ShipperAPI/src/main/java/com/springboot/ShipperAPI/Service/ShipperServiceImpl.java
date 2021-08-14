@@ -97,7 +97,7 @@ public class ShipperServiceImpl implements ShipperService {
 		response.setAccountVerificationInProgress(false);
 
 		shipperdao.save(shipper);
-		log.info("shipper is saved to the database");
+		log.info("shipper is saved to the the database");
 
 		response.setStatus(CommonConstants.PENDING);
 		response.setMessage(CommonConstants.APPROVE_REQUEST);
