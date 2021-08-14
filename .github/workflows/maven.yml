@@ -37,7 +37,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: testing
-      run: mvn install --file pom.xml
+      run: mvn test
   
    deploy:
     needs: [build,test]
@@ -50,7 +50,8 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: testing
-      run: cd ~/actions-runner/deploy/shipperApi/shipperApi/ShipperAPI
+    - run: mvn -B package --file pom.xml
+    - run: cd ~/actions-runner/deploy/shipperApi/shipperApi/ShipperAPI
     - run: sudo docker container stop postgres-containe||true
     - run: sudo docker container stop shippert2||true
     - run: sudo docker image rm ship||true
