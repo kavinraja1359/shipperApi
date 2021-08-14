@@ -35,4 +35,4 @@ jobs:
     - run: sudo docker image rm ship||true
     - run: sudo docker build -t ship .
     - run: sudo docker start postgres-containe||sudo docker run --name postgres-containe -e POSTGRES_PASSWORD=postgres -d postgres:alpine
-    - run: sudo docker run --name shippert2 -p 8080:8080 -link postgres-containe:postgres ship |echo "success"
+    - run: sudo docker run --name shippert2 -p 8080:8080 --link postgres-containe:postgres ship |echo "success"
