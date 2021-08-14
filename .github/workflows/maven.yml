@@ -30,12 +30,16 @@ jobs:
     needs: build
     runs-on: [ 'Linux', 'X64', 'self-hosted']
     steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 11
     - name: testing
       run: mvn test
    deploy:
     needs: test
     runs-on: [ 'Linux', 'X64', 'self-hosted']
     steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 11
     - name: testing
    
     - run: cd ~/actions-runner/deploy/shipperApi/shipperApi/ShipperAPI
