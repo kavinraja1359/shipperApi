@@ -34,15 +34,15 @@ jobs:
     - name: Set up JDK 11
     - name: testing
       run: mvn test
+  
    deploy:
-    needs: test
+    needs: [build,test]
     runs-on: [ 'Linux', 'X64', 'self-hosted']
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
     - name: testing
-   
-    - run: cd ~/actions-runner/deploy/shipperApi/shipperApi/ShipperAPI
+      run: cd ~/actions-runner/deploy/shipperApi/shipperApi/ShipperAPI
     - run: sudo docker container stop postgres-containe||true
     - run: sudo docker container stop shippert2||true
     - run: sudo docker image rm ship||true
